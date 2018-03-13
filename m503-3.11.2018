@@ -1,0 +1,24 @@
+Send: M503
+
+Recv: echo:Steps per unit:
+Recv: echo:  M92 X80.19 Y80.19 Z800.00 E106.00
+Recv: echo:Maximum feedrates (mm/s):
+Recv: echo:  M203 X500.00 Y500.00 Z4.00 E50.00
+Recv: echo:Maximum Acceleration (mm/s2):
+Recv: echo:  M201 X3000 Y3000 Z5 E3000
+Recv: echo:Accelerations: P=printing, R=retract and T=travel
+Recv: echo:  M204 P500.00 R500.00 T500.00
+Recv: echo:Advanced variables: S=Min feedrate (mm/s), T=Min travel feedrate (mm/s), B=minimum segment time (ms), X=maximum XY jerk (mm/s),  Z=maximum Z jerk (mm/s),  E=maximum E jerk (mm/s)
+Recv: echo:  M205 S0.00 T0.00 B20000 X20.00 Z0.40 E5.00
+Recv: echo:Home offset (mm):
+Recv: echo:  M206 X0.00 Y0.00 Z0.00
+Recv: echo:Material heatup parameters:
+Recv: echo:  M145 M0 H225 B70 F0
+Recv: echo:  M145 M1 H250 B110 F0
+Recv: echo:PID settings:
+Recv: echo:  M301 P22.20 I1.08 D114.00 C1.00 L20
+Recv: echo:Filament settings: Disabled
+Recv: echo:  M200 D3.00
+Recv: echo:  M200 D0
+Recv: echo:Z-Probe Offset (mm):
+Recv: echo:  M851 Z-0.90
