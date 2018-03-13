@@ -1,9 +1,14 @@
 # pegasus12-configs-only
 Just config.h and config_adv.h
 
+Get current running printer config (Note: Must have eeprom enabled) 
+- Connect to printer and issue M503
+	- In Octoprint click on terminal, tick supress temp messages
+	- copy this to a file and cleanup with vi:  :%s/RECV/\r&/g
+
 Following are summary notes from Pegasus Firmware guide.  This will allow us to flash the printer from Octoprint
 
-PC/Mac setup:
+PC setup:
 - Download the arduino software
 	- Go to www.arduino.cc
 	- Click on “Download”
