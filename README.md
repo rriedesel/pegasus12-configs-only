@@ -2,9 +2,16 @@
 Just config.h and config_adv.h
 
 Get current running printer config (Note: Must have eeprom enabled) 
+==== EEPROM GCodes ====
+
+    M500 Store current settings in EEPROM for the next startup or M501.
+    M501 Read all parameters from EEPROM. (Or, undo changes.)
+    M502 Reset current settings to defaults, as set in Configurations.h. (Follow with M500 to reset the EEPROM too.)
+    M503 Print the current settings – ''Not the settings stored in EEPROM.''
 - Connect to printer and issue M503
 	- In Octoprint click on terminal, tick supress temp messages
 	- copy this to a file and cleanup with vi:  :%s/RECV/\r&/g
+
 
 Following are summary notes from Pegasus Firmware guide.  This will allow us to flash the printer from Octoprint
 
