@@ -13,25 +13,29 @@ Get current running printer config (Note: Must have eeprom enabled)
 
 - Connect to printer and issue M503
 	- In Octoprint click on terminal, tick supress temp messages
-	- copy this to a file and cleanup with vi:  :%s/RECV/\r&/g
+	- copy this to a file and cleanup with vi:  :%s/Recv/\r&/g
 
 
 Following are summary notes from Pegasus Firmware guide.  This will allow us to flash the printer from Octoprint
 
-PC setup:
+PC/MAC setup:
 - Download the arduino software
 	- Go to www.arduino.cc
 	- Click on “Download”
-	- Click on “Previous Releases” and download Arduino 1.0.6 (Don’t get a newer version)
+	- Download the latest - 1.8.7 for mac as of 9/17/2018
 	- Install it.
 - Open the Arduino software
-	- Click on the Tools tab, then board and select “Arduino Mega 2560 or Mega ADK”. 
+	- Click on the Tools tab, then board and select “Arduino Mega 2560”. 
 	- Go to File -> Preferences and then select Show verbose output during -> compilation.
-- Next download and unzip the firmware file from Makerfarm's guide (this is old but it has the graphics U8 libraries)
-  	- https://drive.google.com/file/d/0B80A_woXoRWdQ2NMSzhQdi1RODg/view
-- In the Firmware Folder extract “u8glib_arduino_v1.15”
-	- inside you will see “U8glib”, copy this to C:\Program Files (x86)\Arduino\Libraries
-- Your env is all prepped to compile your new firmware
+	- go to Tools - > Manage Libraries - search for U8glib
+		- install the latest 1.19.1.
+
+	Archive manual steps:
+	- Next download and unzip the firmware file from Makerfarm's guide (this is old but it has the graphics U8 libraries)
+		- https://drive.google.com/file/d/0B80A_woXoRWdQ2NMSzhQdi1RODg/view
+	- In the Firmware Folder extract “u8glib_arduino_v1.15”
+		- inside you will see “U8glib”, copy this to C:\Program Files (x86)\Arduino\Libraries
+	- Your env is all prepped to compile your new firmware
 
 ## Prep and compile your new Marlin firmware
 
