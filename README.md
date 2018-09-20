@@ -30,13 +30,6 @@ PC/MAC setup:
 	- go to Tools - > Manage Libraries - search for U8glib
 		- install the latest 1.19.1.
 
-	Archive manual steps:
-	- Next download and unzip the firmware file from Makerfarm's guide (this is old but it has the graphics U8 libraries)
-		- https://drive.google.com/file/d/0B80A_woXoRWdQ2NMSzhQdi1RODg/view
-	- In the Firmware Folder extract “u8glib_arduino_v1.15”
-		- inside you will see “U8glib”, copy this to C:\Program Files (x86)\Arduino\Libraries
-	- Your env is all prepped to compile your new firmware
-
 ## Prep and compile your new Marlin firmware
 
 - Download the latest Marlin and extract
@@ -47,6 +40,16 @@ PC/MAC setup:
 	- Browse to the latest firmware you prepped and select the .ino file 
 		Marlin.ino
 - Now that we have our firmware loaded click on Sketch then Verify/Compile, if you do not get any errors and see “Done Compiling” at the bottom then we can grab the hex file.  
-	- The program will show you lots of data. At the last lines, you will find the path to the .hex file.
-	- ex: C:\Users\<user>\AppData\Local\Temp\buildxxxx.tmp\Marlin-1.1.0-RC3_12_pegasusBLTouch.cpp.hex
+	-  The hex file will be in the build directory, do not pick the bootloader version.
 
+## Install firmware updater in octoprint
+
+    Click the wrench icon in the top right corner and configure the settings for the plugin
+    Either click the 'Browse' button to upload a file, or provide a URL to a file
+    In advanced add the following gcode (reload defaults, set old z offset from m503, save to eeprom, display success)
+	M502; M851 Z-.9; M500; M117 Firmware updated.
+    Click the 'Flash from' button
+    Wait for the flash to complete
+    Run a G28 and G29 command to verify operation and bed dimensions
+
+	
